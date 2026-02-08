@@ -79,7 +79,7 @@ body {
     margin: auto;
     padding: 20px;
     padding-top: 100px;
-    max-width: 900px;
+    max-width: 1200px;
 }
 
 /* HEADER */
@@ -115,25 +115,33 @@ body {
 }
 /* ---------------------------------------- */
 
+/* MODULE CARDS */
+/* MODULE CARDS */
 .module-card {
     display: block;
     padding: 30px;
     border-radius: 30px;
     border: 1px solid var(--border-color);
     background-color: var(--card-bg);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.4s ease;
 }
-.module-card:hover {
+.module-card:hover:not(.locked) {
     background: rgba(56, 189, 248, 0.05);
     border-color: #38bdf8;
     transform: translateY(-10px);
 }
+.module-card:active:not(.locked) {
+    transform: scale(0.9);
+}
+.module-card.locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 
 .module-card .icon-cont{
     height: 50px;
     width: 50px;
-    background-color: rgba(31, 178, 241, 0.2);
-    color: #1fb2f1;
     margin-bottom: 20px;
     border-radius: 15px;
     display: flex;
@@ -141,14 +149,26 @@ body {
     justify-content: center;
     transition: 0.3s ease;
 }
+.module-card .icon-cont1{
+    background-color: rgba(41, 179, 239, 0.2);
+    color: #1fb2f1;
+}
+.module-card .icon-cont2{
+    background-color: rgba(119, 110, 239, 0.2);
+    color: #7672ed;
+}
+.module-card .icon-cont3{
+    background-color: rgba(57, 69, 87, 0.2);
+    color: #4d627e;
+}
+
 .module-card .icon-cont svg{
     height: 25px;
     width: 25px;
 }
-.module-card:hover .icon-cont{
+.module-card:hover:not(.locked) .icon-cont{
     transform: scale(1.1);
 }
-
 
 
 .module-card .title {
@@ -156,10 +176,47 @@ body {
     font-weight: 900;
     margin-bottom: 5px;
 }
+.module-card .title.locked{
+    color: #95a8c1;
+}
 .module-card .desc {
     color: var(--text-muted);
     font-size: 15px;
     margin-bottom: 20px;
+}
+.module-card .desc.locked{
+    color: #4d627e;
+}
+
+
+.fake-link{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+.fake-link1{
+    color: #1fb2f1;
+}
+.fake-link2{
+    color: #9e6bc3;
+}
+.fake-link3{
+    color: #4d627e;
+}
+.fake-link3.locked{
+    font-size: 12px;
+}
+
+.fake-link svg{
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    margin-left: 5px;
+    transition: 0.3s ease;
+}
+.module-card:hover .fake-link svg{
+    transform: translateX(5px);
 }
 
 
