@@ -1,17 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React Learning Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-    <h3>Welcome to the React Learning Portal</h3>
-    <p>This portal is designed to help you learn React step by step.</p>
-    
+    <!-- THEME TOGGLE BTN -->
+    <button onclick="toggleTheme()" class="theme-toggle-btn">
+        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="sun-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+        </svg>
+    </button>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <!-- HEADER -->
+        <header class="header mb-20">
+            <div class="tag-title">The Zero-TO-one Path</div>
+
+            <h1>Master <span>React.js</span></h1>
+
+            <p>Step-by-step learning modules for modern web development.</p>
+        </header>
+
+
+        <div class="text-left grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- MODULE-1: SETUP -->
+            <a href="" class="module-card">
+                <div class="icon-cont group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="title">Getting Started</h3>                                                                                                  
+                <p class="desc">Learn how to create your first React app from scratch and understand every file in your project folder.</p>
+                <div>
+                    Start Setup 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+            </a>
+
+
+            <!-- MODULE-1: SETUP -->
+            <a href="" class="module-card">
+                <div class="icon-cont group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="title">Getting Started</h3>                                                                                                  
+                <p class="desc">Learn how to create your first React app from scratch and understand every file in your project folder.</p>
+                <div>
+                    Start Setup 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+            </a>
+
+
+            <!-- MODULE-1: SETUP -->
+            <a href="" class="module-card">
+                <div class="icon-cont group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="title">Getting Started</h3>                                                                                                  
+                <p class="desc">Learn how to create your first React app from scratch and understand every file in your project folder.</p>
+                <div>
+                    Start Setup 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+            </a>
+
+
+        </div>
+    </div>
 
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
