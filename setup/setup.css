@@ -88,6 +88,7 @@ code{
     transition: 0.3s ease;
 }
 .folder-card{
+    box-shadow: 0 8px 20px -2px rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -126,6 +127,7 @@ code{
 
 
 .footer{
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     border: 1px solid rgba(0, 0, 0, 0.15);

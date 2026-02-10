@@ -3,170 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React Project Anatomy</title>
+    <title>Core Concepts Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        code { font-family: 'Fira Code', monospace; }
-        .folder-card { transition: all 0.3s ease; }
-        .folder-card:hover { transform: translateX(8px); }
-        .file-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
-        .command-line::before { content: "$ "; color: #6366f1; font-weight: bold; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; }
+        .topic-card { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
+        .topic-card:hover { border-color: #6366f1; background: rgba(99, 102, 241, 0.05); transform: scale(1.02); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 pb-20">
+<body class="min-h-screen">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-8 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-            </div>
-            <h1 class="font-extrabold text-xl tracking-tight text-slate-800">React Anatomy</h1>
-        </div>
-        <div class="flex gap-4">
-            <a href="#setup" class="text-xs font-bold text-indigo-600 hover:underline">1. Start Here</a>
-            <a href="#structure" class="text-xs font-bold text-slate-500 hover:underline">2. Folders</a>
-        </div>
+    <nav class="p-6">
+        <a href="index.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            Back to Dashboard
+        </a>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
-        
-        <!-- SECTION 0: THE STARTING POINT -->
-        <section id="setup" class="mb-24">
-            <header class="mb-10 text-center">
-                <div class="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Phase 01: Ignition</div>
-                <h2 class="text-4xl font-black text-slate-900 mb-2 italic">How to Create the App</h2>
-                <p class="text-slate-500">Run these commands in your terminal to generate the folders below.</p>
-            </header>
+    <div class="max-w-5xl mx-auto px-6 py-12">
+        <header class="mb-16">
+            <h1 class="text-4xl font-black mb-4">Core Concepts <span class="text-indigo-400">Directory</span></h1>
+            <p class="text-slate-400">Deep dive into specific React mechanics. Select a module to continue.</p>
+        </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-800 space-y-4">
-                    <h3 class="text-white font-bold flex items-center gap-2 text-sm">
-                        <span class="w-5 h-5 bg-indigo-500 rounded flex items-center justify-center text-[10px]">1</span>
-                        Initialize
-                    </h3>
-                    <code class="block text-xs text-indigo-300 command-line">npm create vite@latest my-app</code>
-                    <p class="text-[10px] text-slate-400 italic">Select "React" and then "JavaScript" or "TypeScript".</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Unified Foundations Card -->
+            <a href="react_guide.html" class="topic-card bg-slate-900/40 p-8 rounded-3xl flex justify-between items-center group border-l-4 border-l-sky-500">
+                <div>
+                    <div class="text-[10px] font-bold text-sky-400 uppercase tracking-widest mb-2">Module 01</div>
+                    <h3 class="font-bold text-xl group-hover:text-sky-400 transition-colors">React Foundations</h3>
+                    <p class="text-sm text-slate-500 mt-2 max-w-xs">JSX, Props, Rendering Cycle, Lists, Fragments, and Strict Mode.</p>
                 </div>
-
-                <div class="bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-800 space-y-4">
-                    <h3 class="text-white font-bold flex items-center gap-2 text-sm">
-                        <span class="w-5 h-5 bg-emerald-500 rounded flex items-center justify-center text-[10px]">2</span>
-                        Install
-                    </h3>
-                    <code class="block text-xs text-emerald-300 command-line">cd my-app</code>
-                    <code class="block text-xs text-emerald-300 command-line">npm install</code>
-                    <p class="text-[10px] text-slate-400 italic">This creates the <b>node_modules</b> folder.</p>
+                <div class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
+            </a>
 
-                <div class="bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-800 space-y-4">
-                    <h3 class="text-white font-bold flex items-center gap-2 text-sm">
-                        <span class="w-5 h-5 bg-sky-500 rounded flex items-center justify-center text-[10px]">3</span>
-                        Launch
-                    </h3>
-                    <code class="block text-xs text-sky-300 command-line">npm run dev</code>
-                    <p class="text-[10px] text-slate-400 italic">Your app is now live at <span class="underline">localhost:5173</span></p>
+            <!-- New useState Card -->
+            <a href="topics/use_state.html" class="topic-card bg-slate-900/40 p-8 rounded-3xl flex justify-between items-center group border-l-4 border-l-indigo-500">
+                <div>
+                    <div class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-2">Module 02</div>
+                    <h3 class="font-bold text-xl group-hover:text-indigo-400 transition-colors">The useState Hook</h3>
+                    <p class="text-sm text-slate-500 mt-2 max-w-xs">Mastering component memory, state updates, and reactivity.</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                </div>
+            </a>
+
+            <!-- Placeholder for next Hook -->
+            <div class="topic-card bg-slate-900/20 p-8 rounded-3xl flex justify-between items-center opacity-40 grayscale">
+                <div>
+                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Module 03</div>
+                    <h3 class="font-bold text-xl text-slate-400">useEffect & Lifecycle</h3>
+                    <p class="text-sm text-slate-600 mt-2">Coming soon...</p>
                 </div>
             </div>
-        </section>
 
-        <!-- SECTION 1: FOLDER STRUCTURE -->
-        <section id="structure">
-            <header class="mb-16 text-center">
-                <div class="inline-block px-3 py-1 bg-slate-200 text-slate-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Phase 02: Exploration</div>
-                <h2 class="text-4xl font-black text-slate-900 mb-4 italic uppercase">"What do these files do?"</h2>
-            </header>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
-                <!-- Left Column: The Configuration -->
-                <div class="space-y-8">
-                    <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest px-2">The Brain & Config (Root)</h3>
-                    
-                    <div class="folder-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="file-dot bg-amber-400"></span>
-                            <h4 class="font-bold text-lg">node_modules/</h4>
-                        </div>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">The massive library warehouse. It contains the actual code for React and every other package you download.</p>
-                        <div class="bg-amber-50 border-l-4 border-amber-400 p-3 text-xs text-amber-800 italic font-medium">
-                            Rule #1: NEVER edit anything in here. It's managed by npm.
-                        </div>
-                    </div>
-
-                    <div class="folder-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="file-dot bg-blue-400"></span>
-                            <h4 class="font-bold text-lg italic">package.json</h4>
-                        </div>
-                        <p class="text-sm text-slate-500 leading-relaxed">The <b>ID Card</b> of your project. It lists your dependencies (libraries) and script commands (like <code class="text-indigo-500 font-bold">npm run dev</code>).</p>
-                    </div>
-
-                    <div class="folder-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="file-dot bg-slate-400"></span>
-                            <h4 class="font-bold text-lg">.gitignore</h4>
-                        </div>
-                        <p class="text-sm text-slate-500 leading-relaxed">A list for Git. It tells your computer: "Don't upload node_modules to GitHub, it's too big!"</p>
-                    </div>
-                </div>
-
-                <!-- Right Column: The UI & Source -->
-                <div class="space-y-8">
-                    <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest px-2">The Visible App (src & public)</h3>
-
-                    <div class="folder-card bg-indigo-600 p-6 rounded-2xl shadow-xl shadow-indigo-100 text-white border-b-4 border-indigo-800">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="file-dot bg-white"></span>
-                            <h4 class="font-bold text-lg">src/ (Source)</h4>
-                        </div>
-                        <p class="text-sm text-indigo-100 mb-4 leading-relaxed">This is your home. 99% of your work happens here. This is where you write your components.</p>
-                        <ul class="space-y-3 text-xs">
-                            <li class="bg-indigo-500/50 p-2 rounded-lg"><b>main.jsx:</b> The entry point. It hooks React into HTML.</li>
-                            <li class="bg-indigo-500/50 p-2 rounded-lg"><b>App.jsx:</b> The "Main Component". The wrapper for your whole site.</li>
-                            <li class="bg-indigo-500/50 p-2 rounded-lg"><b>assets/:</b> Images, logos, and icons go here.</li>
-                        </ul>
-                    </div>
-
-                    <div class="folder-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="file-dot bg-emerald-400"></span>
-                            <h4 class="font-bold text-lg">public/</h4>
-                        </div>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Contains assets that are accessed directly by the browser (like the favicon).</p>
-                        <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
-                            <p class="text-[10px] font-bold text-emerald-700 uppercase mb-1">Critical File:</p>
-                            <p class="text-xs text-emerald-800 font-bold italic underline text-center">index.html</p>
-                            <p class="text-[10px] text-emerald-600 mt-1 italic text-center">The skeleton. React injects your code into this file.</p>
-                        </div>
-                    </div>
-
-                    <div class="folder-card bg-slate-900 p-6 rounded-2xl text-slate-400 shadow-sm border border-slate-800">
-                        <h4 class="font-bold text-sm text-slate-200 mb-2">The Execution Flow</h4>
-                        <p class="text-[11px] font-mono leading-loose">
-                            1. <span class="text-emerald-400">index.html</span> loads<br>
-                            2. calls <span class="text-indigo-400">main.jsx</span> (Entry)<br>
-                            3. imports <span class="text-sky-400">App.jsx</span> (Parent)<br>
-                            4. App displays YOUR COMPONENTS.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Footer Pro-Tip -->
-        <section class="mt-20 p-8 bg-white border border-slate-200 rounded-[2rem] flex flex-col md:flex-row items-center gap-8 shadow-sm">
-            <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center shrink-0">
-                <span class="text-3xl">🧩</span>
-            </div>
-            <div>
-                <h3 class="font-bold text-xl mb-2 italic">Pro-Tip for Beginners</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Once you launch with <code class="text-indigo-600 font-bold">npm run dev</code>, keep the terminal open. It will show you errors if your code breaks!</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
 </body>
 </html>
