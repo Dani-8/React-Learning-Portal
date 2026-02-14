@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav class="p-6">
-        <a href="/index.html" class="flex items-center gap-2 outline-none text-sm text-slate-500 group transition-all duration-300 hover:text-slate-200">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-[-5px] transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    <nav class="p-10">
+        <a href="/index.html"
+            class="flex items-center gap-2 outline-none text-sm text-slate-500 group transition-all duration-300 hover:text-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 group-hover:translate-x-[-5px] transition-all duration-200" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
             Back to Dashboard
         </a>
     </nav>
 
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <header class="mb-16">
+            <h1 class="text-4xl font-black mb-4">Core Concepts <span class="text-indigo-400">Directory</span></h1>
+            <p class="text-slate-400">Deep dive into specific React mechanics. Select a module to continue.</p>
+        </header>
 
 
-    <main class="">
-        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
+            <a href="" class="topic-card rounded-3xl bg-slate-900/40 p-8 flex justify-between items-center group border-l-4 border-l-sky-500">
+                <div>
+                    <h2 class="mb-3 text-[10px] font-bold text-sky-500 uppercase">Module 1</h2>
+                    <p class="mb-3 text-xl font-bold text-slate-100 group-hover:text-sky-500 transition-all">React Foundation</p>
+                    <p class="max-w-xs text-sm text-slate-500">JSX, Props, Rendering Cycle, Lists, Fragments, and Strict Mode.</p>
+                </div>
+                <div class="bg-slate-800 w-12 h-12 rounded-2xl flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+            </a>
+
+            <a href="" class="topic-card rounded-3xl bg-slate-900/40 p-8 flex justify-between items-center group border-l-4 border-l-sky-500">
+                <div>
+                    <h2 class="mb-3 text-[10px] font-bold text-sky-500 uppercase">Module 2</h2>
+                    <p class="mb-3 text-xl font-bold text-slate-100 group-hover:text-sky-500 transition-all">React Hooks</p>
+                    <p class="max-w-xs text-sm text-slate-500">JSX, Props, Rendering Cycle, Lists, Fragments, and Strict Mode.</p>
+                </div>
+                <div class="bg-slate-800 w-12 h-12 rounded-2xl flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+            </a>
+
+        </div>
 
 
     </main>
 
 
-    
+
 </body>
+
 </html>
