@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-html,body {
+body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     scroll-behavior: smooth;
 }
-/* ================================================== */
-/* ================================================== */
-/* ================================================== */
 
-
-code, pre {
+code,
+pre {
     font-family: 'Fira Code', monospace;
 }
 
@@ -37,6 +34,61 @@ code, pre {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.nav-link.active span {
+    background-color: #0ea5e9 !important;
+}
+
 .render-step:hover .step-line {
     width: 100%;
+}
+
+/* Logic for interactive examples */
+.preview-content { display: none; }
+.preview-content-alt { display: block; }
+
+/* Toggle Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+input:checked + .slider {
+    background-color: #a855f7;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
 }

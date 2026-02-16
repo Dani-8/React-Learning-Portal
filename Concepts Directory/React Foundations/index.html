@@ -57,10 +57,10 @@
 
 
 
-    <div class=" w-full px-6 py-12 flex gap-10">
+    <div class="max-w-7xl px-6 py-12 flex gap-10">
         <!-- SIDEBAR -->
         <aside class="w-72 shrink-0 hidden lg:block">
-            <div class="sticky top-28 space-y-8 border-r border-r-slate-900">
+            <div class="sticky top-28 space-y-8 border-r border-r-slate-300">
                 <div>
                     <h3 class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-4">Core Concepts</h3>
                     <nav>
@@ -124,24 +124,50 @@
                     <div class="font-bold text-3xl">Components & JSX</div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2">
                     <div class="space-y-4">
-                        <p class="text-slate-600 font-medium">A <span class="text-indigo-600 font-bold underline decoration-indigo-200">Component</span> 
+                        <p class="text-slate-600 font-medium italic">A <span class="text-indigo-600 font-bold underline decoration-indigo-200">Component</span> 
                             is just a JavaScript function that returns a UI blueprint (JSX).
                         </p>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-sky-300 space-y-2">
-                                <div class="p-4 bg-slate-900 rounded-xl"></div>
-                                <div class="p-4 bg-slate-900 rounded-xl"></div>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-slate-900 rounded-xl space-y-2">
+                                    <span class="text-[10px] text-slate-400 font-bold uppercase">Header.jsx (The Definition)</span>
+                                    <pre class="text-xs text-sky-400"><code>export default function Header() {
+    return &lt;h1&gt;Welcome to React&lt;/h1&gt;;
+}
+                                    </code></pre>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl space-y-2">
+                                    <span class="text-[10px] text-slate-400 font-bold uppercase">App.jsx (The Call)</span>
+                                    <pre class="text-xs text-sky-400"><code>import Header from './Header';
+                                        
+function App() {
+    return (
+        &lt;div&gt;
+        &lt;Header /&gt; 
+        &lt;/div&gt;
+    );
+}
+                                    </code></pre>
+                                </div>
                             </div>
 
-                            <div class="bg-rose-300 p">
+                            <!-- Result Side -->
+                            <div class="bg-white border-2 border-dashed border-slate-200 rounded-2xl flex flex-col">
+                                <div class="p-3 border-b border-slate-100 flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                    <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                                    <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                                    <span class="text-[10px] font-bold text-slate-400 ml-2">Browser Preview</span>
+                                </div>
 
+                                <div class="p-8 flex items-center justify-center flex-1">
+                                    <h1 class="text-2xl font-black text-slate-800">Welcome to React</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
 
 
