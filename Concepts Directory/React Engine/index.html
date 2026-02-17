@@ -8,8 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="p-4 md:p-12">
-    <nav class="max-w-6xl mx-auto mb-8">
+<body class="p-6 md:p-12">
+
+    <nav class="max-w-6xl mx-auto mb-8 ">
         <a href="../index.html" class="text-slate-400 hover:text-indigo-600 flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
             Back to Roadmap
@@ -62,6 +63,7 @@
                     <span class="font-bold text-xs text-slate-600 uppercase tracking-widest">2. main.jsx</span>
                     <span class="text-[10px] font-bold text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded">ENTRY</span>
                 </div>
+
                 <div class="p-5 bg-slate-900 flex-grow">
                     <pre class="text-[11px] leading-relaxed text-indigo-200"><code>import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -69,13 +71,14 @@ import App from './App.jsx'
 import './index.css'
 
 <span class="text-white bg-indigo-500/20 px-1 rounded">ReactDOM.createRoot(
- document.getElementById('root')
+  document.getElementById('root')
 ).render(
- &lt;React.StrictMode&gt;
-  &lt;App /&gt;
- &lt;/React.StrictMode&gt;
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;
 )</span></code></pre>
                 </div>
+
                 <div class="p-5 text-xs text-slate-500 bg-white">
                     The <b>Bridge</b>. It imports React, finds the <code>#root</code>, and renders your <code>App</code> component inside it.
                 </div>
@@ -88,6 +91,7 @@ import './index.css'
                     <span class="font-bold text-xs text-slate-600 uppercase tracking-widest">3. App.jsx</span>
                     <span class="text-[10px] font-bold text-sky-500 bg-sky-50 px-2 py-0.5 rounded">ROOT</span>
                 </div>
+
                 <div class="p-5 bg-slate-900 flex-grow">
                     <pre class="text-[11px] leading-relaxed text-sky-200"><code>import Navbar from './Navbar'
 import Home from './Home'
@@ -95,16 +99,18 @@ import Home from './Home'
 function App() {
  return (
   <span class="text-white bg-sky-500/20 px-1 rounded">&lt;div class="app"&gt;
+
    &lt;Navbar /&gt;
    &lt;main&gt;
-    &lt;Home /&gt;
+     &lt;Home /&gt;
    &lt;/main&gt;
+
   &lt;/div&gt;</span>
- )
-}
+ )}
 
 export default App</code></pre>
                 </div>
+
                 <div class="p-5 text-xs text-slate-500 bg-white">
                     The <b>Boss</b>. This is the first "real" component. It decides which major parts (Navbar, Pages) to show.
                 </div>
@@ -112,8 +118,87 @@ export default App</code></pre>
 
         </section>
 
+
+        <!-- UI Folder Logic -->
+        <section class="bg-white rounded-[3rem] p-8 md:p-12 border border-slate-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-black text-slate-800 italic uppercase">The "Folder" Architecture</h2>
+                    <p class="text-slate-500 text-sm leading-relaxed">Don't throw everything in <code>src/</code>. Group your UI into dedicated folders so you can find them instantly.</p>
+                    
+                    <div class="folder-tree font-mono text-xs space-y-2 text-slate-600 bg-slate-50 p-6 rounded-2xl border border-slate-200 ">
+                        <div class="font-bold text-indigo-600">📁 src</div>
+                        <ul>
+                            <li class="text-indigo-500">📁 components</li>
+                            <ul>
+                                <li class="text-slate-400">📁 layout</li>
+                                <ul>
+                                    <li>📄 Header.jsx</li>
+                                    <li>📄 Footer.jsx</li>
+                                </ul>
+                                <li class="text-slate-400">📁 ui</li>
+                                <ul>
+                                    <li>📄 Button.jsx</li>
+                                    <li>📄 Input.jsx</li>
+                                </ul>
+                            </ul>
+                            <li class="text-emerald-600">📁 pages</li>
+                            <ul>
+                                <li>📄 Home.jsx</li>
+                                <li>📄 Contact.jsx</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-600 rounded-[2.5rem] p-8 text-white space-y-6 shadow-2xl shadow-indigo-200">
+                    <h3 class="font-bold text-xl italic">Example: Creating a Header</h3>
+                    
+                    <div class="bg-slate-900 rounded-2xl p-4 text-[10px]">
+                        <p class="text-slate-500 mb-2 italic">// Location: src/components/layout/Header.jsx</p>
+
+                        <pre class="text-indigo-300"><code>export default function Header() {
+  return (
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;/header&gt;
+  )
+}</code></pre>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm flex items-center gap-2">
+                            <span class="w-5 h-5 bg-white text-indigo-600 rounded-full flex items-center justify-center text-[10px]">!</span>
+                            The Import Rule
+                        </h4>
+                        <p class="text-xs text-indigo-100">Now, go to <code>App.jsx</code> and call it:</p>
+                        <code class="block bg-indigo-800 p-2 rounded-lg text-[10px]">import Header from './components/layout/Header'</code>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-900 rounded-[3rem] p-10 text-center space-y-10 border border-slate-800">
+            <div class="space-y-2">
+                <h3 class="text-white font-black text-2xl uppercase italic">Ready for the next level?</h3>
+                <p class="text-slate-400 text-sm">Now that you know how the engine starts, let’s take it a step further.</p>
+            </div>
+
+            <div class="pt-6 border-t border-white/5">
+                <a href="../React Foundations/index.html" class="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-indigo-800 hover:text-white transition-all transform hover:scale-105">
+                    View Foundations
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </a>
+            </div>
+        </footer>
+        
+
+
     </div>
-
-
+    
 </body>
 </html>

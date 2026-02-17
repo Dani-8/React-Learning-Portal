@@ -11,14 +11,16 @@ code {
     font-family: 'Fira Code', monospace;
 }
 
+
 .file-card {
     transition: all 0.3s ease;
 }
-
 .file-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.13);
 }
+
+
 
 .folder-tree ul {
     border-left: 2px solid #e2e8f0;
@@ -26,10 +28,11 @@ code {
     padding-left: 1rem;
 }
 
+
+
 .roadmap-step {
     position: relative;
 }
-
 .roadmap-step::after {
     content: '';
     position: absolute;
@@ -40,7 +43,6 @@ code {
     background: #e2e8f0;
     transform: translateY(-50%);
 }
-
 .roadmap-step:last-child::after {
     display: none;
 }
