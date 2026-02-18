@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+html,body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+
+code,
+pre {
+    font-family: 'Fira Code', monospace;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.hook-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hook-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.nav-link.active {
+    background: white;
+    color: #6366f1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.nav-link.active span {
+    background-color: #6366f1 !important;
+}
+
+.destructure-tag {
+    @apply px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tighter;
+}
+
+
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(.33);
+    }
+
+    80%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.pulse-dot::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    border-radius: 45px;
+    background-color: currentColor;
+}
+
+
+
+
+/* Lab Button Glow */
+.lab-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.lab-btn:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    transform: scale(1.02);
+}
+
+
+
+
+.peek-container {
+    position: relative;
+}
+.peek-preview {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    z-index: 100;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.peek-container:hover .peek-preview {
+    display: block;
+}
