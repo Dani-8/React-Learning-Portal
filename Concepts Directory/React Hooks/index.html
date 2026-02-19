@@ -54,7 +54,7 @@
                             <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-indigo-500 transition-all duration-500"></span>
                             useEffect (Sync)
                         </a>
-                        <a href="#ref" class="nav-link group flex items-center gap-3 px-4 py-3 text-sm font-semibold rounded-xl text-slate-600 hover:bg-white hover:text-indigo-600 transition-all duration-500">
+                        <a href="#ref" class="nav-link group flex items-center hidden gap-3 px-4 py-3 text-sm font-semibold rounded-xl text-slate-600 hover:bg-white hover:text-indigo-600 transition-all duration-500">
                             <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-indigo-500 transition-all duration-500"></span>
                             useRef (Manual)
                         </a>
@@ -93,7 +93,7 @@
 
 
             <!-- Hook Rules -->
-            <section class="p-8 bg-amber-100/50 rounded-3xl border border-amber-300 space-y-6">
+            <section class="p-8 bg-amber-100/30 rounded-3xl border border-amber-300 space-y-6">
                 <div class="flex items-end gap-2">
                     <span class="text-2xl">🚨</span>
                     <h3 class="font-black text-amber-900 uppercase tracking-widest text-sm">The Laws of Hooks</h3>
@@ -200,7 +200,67 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 
             <!-- useEffect -->
             <section id="effect" class="hook-section space-y-10">
-                
+                <!-- Header -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl">02</div>
+                        <h2 class="text-3xl font-bold text-slate-900">useEffect: The Smart Window</h2>
+                    </div>
+
+                    <div class="peek-container">
+                        <div class="peek-preview">
+                            <p class="text-[10px] font-black text-emerald-400 uppercase mb-2">Lab Preview</p>
+                            <p class="text-xs text-white leading-relaxed">Build a Dynamic Clock & API Fetcher that reacts to state changes.</p>
+                        </div>
+                        <a href="effect_lab.html" class="lab-btn px-6 py-2.5 bg-emerald-600 text-white rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2">
+                            <span>Open Lab</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Think of `useEffect` as a <b>Smart Window</b>. By default, it's closed. But you can tell it to open and sync with the world whenever something inside your room (state) changes.
+                        </p>
+
+                        <div class="p-6 bg-slate-900 rounded-[2rem] relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                            </div>
+                            <pre class="text-xs text-emerald-300"><code>useEffect(() => {
+  // 1. Open Window (Setup)
+  console.log("Syncing...");
+
+  return () => {
+    // 2. Close Window (Cleanup)
+    console.log("Cleaning up...");
+  };
+
+}, [weather]); // Only when weather changes!</code></pre>
+                        </div>
+                    </div>
+
+
+                    <!-- UPDATED Lifecycle Section -->
+                    <div class="bg-white border-2 border-dashed border-slate-200 rounded-[2.5rem] p-8 space-y-8">
+                        <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-4">The Component Life Path</h4>
+
+                        <div class="relative">
+                            <!-- Vertical Line -->
+                            <div class="absolute left-[11px] top-4 bottom-4 w-0.5 bg-slate-100"></div>
+
+
+                            
+
+
+                        </div>
+                    </div>
+
+                </div>
+
             </section>
 
 
