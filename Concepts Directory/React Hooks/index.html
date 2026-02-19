@@ -78,7 +78,7 @@
 
 
         <!-- Main Content -->
-        <main class="">
+        <main class="space-y-22 flex-1">
 
             <!-- Header -->
             <section class="space-y-6">
@@ -92,7 +92,18 @@
             </section>
 
 
-            
+            <!-- Hook Rules -->
+            <section class="p-8 bg-amber-50 rounded-3xl border border-amber-100 space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl">🚨</span>
+                    <h3 class="font-black text-amber-900 uppercase tracking-widest text-sm">The Laws of Hooks</h3>
+                </div>
+                
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-amber-800">
+                    <li class="flex items-center gap-2">✅ Call at the Top Level (Never in loops/ifs)</li>
+                    <li class="flex items-center gap-2">✅ Call ONLY from React Functions</li>
+                </ul>
+            </section>
 
 
 
