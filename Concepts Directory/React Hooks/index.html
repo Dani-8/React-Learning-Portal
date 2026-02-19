@@ -78,7 +78,7 @@
 
 
         <!-- Main Content -->
-        <main class="space-y-20      flex-1">
+        <main class="space-y-20 flex-1 mb-40    ">
 
             <!-- Header -->
             <section class="space-y-6">
@@ -104,6 +104,101 @@
                     <li class="flex items-center gap-2">✅ Call ONLY from React Functions</li>
                 </ul>
             </section>
+
+
+            <!-- useState -->
+            <section id="state" class="hook-section space-y-10">
+                <!-- Header -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black text-xl">01</div>
+                        <h2 class="text-3xl font-bold text-slate-900">useState: The Battery</h2>
+                    </div>
+
+                    
+                    <!-- Lab Button -->
+                    <div class="peek-container">
+                        <div class="peek-preview">
+                            <p class="text-[10px] font-black text-indigo-400 uppercase mb-2">Lab Preview</p>
+                            <p class="text-xs text-white leading-relaxed">Create a Counter & Text Input synced with local memory.</p>
+                        </div>
+                        <a href="state_lab.html" class="lab-btn px-6 py-2.5 bg-indigo-600 text-white rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2">
+                            <span>Open Lab</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- visual presentation of usestate -->
+                <div class="bg-indigo-50/50 p-1 rounded-[2rem] border border-indigo-100 overflow-hidden">
+                    <div class="bg-white rounded-[1.8rem] p-8 flex flex-col md:flex-row items-center gap-8 shadow-sm">
+
+                        <div class="flex-1 space-y-4">
+                            <h4 class="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Visual Destructuring</h4>
+
+                            <div class="flex items-center gap-2 text-2xl font-mono text-slate-800">
+                                <span class="text-indigo-400">[</span>
+                                <div class="px-3 py-1 bg-indigo-500 text-white rounded-lg shadow-md shadow-indigo-100">data</div>
+                                <span class="text-slate-300">,</span>
+                                <div class="px-3 py-1 bg-slate-800 text-white rounded-lg shadow-md shadow-slate-400">setData</div>
+                                <span class="text-indigo-400">]</span>
+                                <span class="text-slate-300">=</span>
+                                <span class="text-indigo-600">useState</span>
+                                <span class="text-slate-300">(</span>
+                                <span class="text-emerald-500">"init"</span>
+                                <span class="text-slate-300">)</span>
+                            </div>
+
+                            <div class="flex items-center gap-4 pt-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-2 h-2 rounded-full bg-indigo-500 mt-1.5"></div>
+                                    <div>
+                                        <p class="text-xs font-black uppercase tracking-tighter text-indigo-600">The Value</p>
+                                        <p class="text-[10px] text-slate-500">Read-only current data.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-3">
+                                    <div class="w-2 h-2 rounded-full bg-slate-800 mt-1.5"></div>
+                                    <div>
+                                        <p class="text-xs font-black uppercase tracking-tighter text-slate-800">The Trigger</p>
+                                        <p class="text-[10px] text-slate-500">Updates value & re-renders.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <p class="text-slate-600 text-sm">Imagine state as a battery that keeps your component's data alive even when it re-renders.</p>
+                        <div class="p-4 bg-slate-900 rounded-xl">
+                            <pre class="text-xs text-indigo-300"><code>const [energy, setEnergy] = useState(100);
+
+const recharge = () => setEnergy(energy + 10);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-dashed border-slate-200 rounded-2xl p-6 flex flex-col justify-center gap-6">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                            <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Variable</span>
+                            <span class="text-xs line-through text-slate-400">Lost on Re-render</span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-indigo-50 rounded-xl border border-indigo-100">
+                            <span class="text-xs font-bold text-indigo-600 tracking-widest uppercase">State</span>
+                            <span class="text-xs font-black text-indigo-600">Preserved Memory</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
 
 
