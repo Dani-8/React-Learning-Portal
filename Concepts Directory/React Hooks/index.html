@@ -220,7 +220,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                 </div>
 
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <div class="space-y-6">
                         <p class="text-slate-600 text-sm leading-relaxed">
                             Think of `useEffect` as a <b>Smart Window</b>. By default, it's closed. But you can tell it to open and sync with the world whenever something inside your room (state) changes.
@@ -252,9 +252,34 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                             <!-- Vertical Line -->
                             <div class="absolute left-[11px] top-4 bottom-4 w-0.5 bg-slate-100"></div>
 
+                            <div class="space-y-8 relative">
+                                <!-- Stage 1 -->
+                                <div class="flex items-start gap-4 group">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] text-white font-bold shrink-0 z-10 shadow-lg shadow-emerald-100 ring-4 ring-white">1</div>
+                                    <div class="space-y-1">
+                                        <h5 class="text-xs font-black text-emerald-800 uppercase tracking-tight">The Birth (Mount)</h5>
+                                        <p class="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">The component appears on screen. `useEffect` runs its code for the <span class="font-bold text-emerald-600">first time</span>.</p>
+                                    </div>
+                                </div>
 
-                            
+                                <!-- Stage 2 -->
+                                <div class="flex items-start gap-4 group">
+                                    <div class="w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center text-[10px] text-white font-bold shrink-0 z-10 shadow-lg shadow-sky-100 ring-4 ring-white">2</div>
+                                    <div class="space-y-1">
+                                        <h5 class="text-xs font-black text-sky-800 uppercase tracking-tight">The Growth (Update)</h5>
+                                        <p class="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">A state in your dependency array changes. React <span class="font-bold text-sky-600">re-runs</span> the effect to keep everything in sync.</p>
+                                    </div>
+                                </div>
 
+                                <!-- Stage 3 -->
+                                <div class="flex items-start gap-4 group">
+                                    <div class="w-6 h-6 rounded-full bg-rose-500 flex items-center justify-center text-[10px] text-white font-bold shrink-0 z-10 shadow-lg shadow-rose-100 ring-4 ring-white">3</div>
+                                    <div class="space-y-1">
+                                        <h5 class="text-xs font-black text-rose-800 uppercase tracking-tight">The Exit (Unmount)</h5>
+                                        <p class="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">Component leaves the screen. The <span class="font-bold text-rose-600">Cleanup Function</span> runs to stop timers or close connections.</p>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
