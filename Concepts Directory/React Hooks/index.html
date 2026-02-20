@@ -342,7 +342,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-black text-xl">03</div>
-                        <h2 class="text-3xl font-bold text-slate-900">useRef: The Mechanical Hand</h2>
+                        <h2 class="text-3xl font-bold text-slate-900">useRef: The Ghost Variable</h2>
                     </div>
 
                     <div class="peek-container">
@@ -386,26 +386,27 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 
 
                 <!-- breakdown -->
-                <div class="bg-amber-100/40 p-8 rounded-[2.5rem] border border-amber-100 border-dashed space-y-6">
+                <div class="bg-amber-100/30 p-8 rounded-[2.5rem] border border-amber-100 border-dashed space-y-6">
                     <div class="flex flex-col md:flex-row items-center gap-10">
 
-                        <div class="bg-slate-900 p-8 rounded-2xl shadow-2xl font-mono text-sm relative shrink-0">
-                            <div class="absolute -top-3 left-4 px-2 bg-amber-500 text-white text-[9px] font-black rounded uppercase">Return Object</div>
+                        <div class="bg-slate-900 px-5 py-8 rounded-2xl shadow-2xl font-mono text-sm relative shrink-0">
+                            <div class="absolute -top-3 left-4 px-2 bg-amber-500 text-white text-[11px] font-black rounded uppercase">Return Object</div>
 
                             <span class="text-slate-500 text-lg">{</span><br>
-                            &nbsp;&nbsp;<span class="text-amber-400 font-bold text-xl">current</span><span class="text-slate-500">:</span> <span class="text-emerald-400">value</span><br>
+                            &nbsp;&nbsp;<span class="text-amber-400 font-bold text-lg">current</span><span class="text-slate-500 text-lg">:</span> <span class="text-emerald-400">value</span><br>
                             <span class="text-slate-500 text-lg">}</span>
                         </div>
 
                         <div class="space-y-4 text-center md:text-left">
                             <p class="text-lg font-bold text-amber-900 leading-tight">The Anatomy: A Constant Identity</p>
+
                             <p class="text-sm text-slate-600 leading-relaxed">
                                 Unlike regular variables that get "reset" when a component re-renders, the <b class="text-slate-800 underline decoration-amber-500/30">Ref object is created once and never dies.</b> 
                             </p>
-                            
+
                             <div class="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-amber-200 shadow-sm">
                                 <span class="text-[10px] font-black text-amber-600 uppercase">The Key:</span>
-                                <span class="text-[10px] text-slate-500 italic">Changing ".current" is silent. React doesn't watch the box.</span>
+                                <span class="text-[10px] text-slate-600 italic">Changing ".current" is silent. React doesn't watch the box.</span>
                             </div>
                         </div>
 
@@ -413,6 +414,71 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                 </div>
 
 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div class="bg-amber-50/30 border border-amber-100 rounded-[2.5rem] p-8 space-y-4 hover:bg-amber-50 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-amber-600 border border-amber-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
+                            </div>
+                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest">01. The DOM Anchor</h4>
+                        </div>
+
+                        <p class="text-xs text-slate-600 leading-relaxed">Reach out and touch physical HTML elements directly. Essential for focus, measuring size, or integrating with non-React libraries.</p>
+
+                        <div class="bg-slate-900 rounded-xl p-3 font-mono text-[10px] text-amber-300">
+                            <span class="opacity-50">&lt;input</span> ref={myRef} <span class="opacity-50">/&gt;</span><br><br>
+                            myRef.current.focus();
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50/30 border border-emerald-100 rounded-[2.5rem] p-8 space-y-4 hover:bg-emerald-50 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-emerald-600 border border-emerald-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                            </div>
+                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest">02. Silent Storage</h4>
+                        </div>
+
+                        <p class="text-xs text-slate-600 leading-relaxed">Store variables that persist across renders but <b>do not</b> trigger a visual update when changed. Ideal for Timers or IDs.</p>
+
+                        <div class="bg-slate-900 rounded-xl p-3 font-mono text-[10px] text-emerald-300">
+                            <span class="opacity-60">// Saves data, stays silent.</span><br><br>
+                            myRef.current = <span class="text-white">"New Value"</span>;
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Table -->
+                <div class="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-8 space-y-6">
+                    <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] text-center mb-6">Reference vs State</h4>
+
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="text-[10px] font-bold text-slate-400 py-2 uppercase tracking-tighter">Feature</div>
+                        <div class="text-[11px] font-black text-indigo-600 bg-indigo-50 rounded-lg py-2">useState</div>
+                        <div class="text-[11px] font-black text-amber-600 bg-amber-50 rounded-lg py-2">useRef</div>
+                        
+                        <div class="text-[10px] font-bold text-slate-500 border-b border-slate-200 py-4 text-nowrap">Trigger Re-render?</div>
+                        <div class="text-[10px] font-bold text-emerald-600 border-b border-slate-200 py-4 text-sm uppercase">Yes</div>
+                        <div class="text-[10px] font-bold text-rose-600 border-b border-slate-200 py-4 text-sm uppercase">No</div>
+                        
+                        <div class="text-[10px] font-bold text-slate-500 border-b border-slate-200 py-4">Persistence</div>
+                        <div class="text-[10px] font-bold text-slate-700 border-b border-slate-200 py-4">Always</div>
+                        <div class="text-[10px] font-bold text-slate-700 border-b border-slate-200 py-4">Always</div>
+
+                        <div class="text-[10px] font-bold text-slate-500 py-4">Best for...</div>
+                        <div class="text-[10px] font-medium text-slate-600 py-4 leading-tight">Screen Data</div>
+                        <div class="text-[10px] font-medium text-slate-600 py-4 leading-tight">Logic/DOM</div>
+                    </div>
+                    
+                    <div class="pt-6 border-t border-slate-200 text-center">
+                        <p class="text-xs font-bold text-slate-800">
+                            Basically: <span class="text-indigo-600">State</span> is for things the <span class="underline">user sees</span>. <span class="text-amber-600">Ref</span> is for things the <span class="underline">developer needs</span>.
+                        </p>
+                    </div>
+                </div>
             </section>
 
         </main>
