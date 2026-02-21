@@ -365,7 +365,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                 <!-- Intro -->
                 <div class="bg-slate-900 text-white p-7 md:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
                     <div class="relative z-10 max-w-2xl">
-                        <h3 class="text-amber-500 font-black uppercase tracking-[0.2em] text-[10px] mb-3">The Big Idea</h3>
+                        <h3 class="text-amber-500 font-black uppercase tracking-[0.2em] text-[10px] mb-3">Quick Summary</h3>
                         <p class="text-sm md:text-md font-medium leading-relaxed text-slate-200">
                             Think of <code class="text-amber-400 font-bold bg-amber-400/10 px-1.5 py-0.5 rounded">useRef</code> as a <span class="text-emerald-400 font-semibold border-b-2 border-emerald-500/30 pb-0.5">memory vault</span> that React doesn't track. It lets you "remember" data without forcing the screen to refresh.
                         </p>
@@ -494,13 +494,33 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center font-black text-xl">04</div>
-                        <h2 class="text-3xl font-bold text-slate-900">useContext: The Teleporter</h2>
+                        <h2 class="text-3xl font-bold text-slate-900">useContext: Global Access</h2>
                     </div>
 
-                    <a href="context_lab.html" class="lab-btn px-6 py-2.5 bg-pink-600 text-white rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2">
-                        <span>Open Lab</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
+                    <div class="peek-container hidden md:block">
+                        <div class="peek-preview">
+                            <p class="text-[10px] font-black text-pink-400 uppercase mb-2">Interactive Lab</p>
+                            <p class="text-[11px] text-slate-300 leading-relaxed">
+                                <b>Zero Prop-Drilling:</b> Build a global Theme & Auth system that beams data through the component tree.
+                            </p>
+                        </div>
+
+                        <a href="context_lab.html" class="px-6 py-2.5 bg-pink-600 text-white rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:bg-pink-700 transition-all shadow-md active:scale-95">
+                            <span>Open Lab</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Intro -->
+                <div class="bg-slate-900 text-white p-7 md:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl">
+                        <h3 class="text-pink-500 font-black uppercase tracking-[0.2em] text-[10px] mb-3">Quick Summary</h3>
+                        <p class="text-sm md:text-md font-medium leading-relaxed text-slate-200">
+                            Context makes your <span class="text-pink-400 font-semibold border-b-2 border-pink-500/30 pb-0.5">data available everywhere</span>. Instead of passing <span class="text-emerald-400">props</span> down manually, any component can reach out and <span class="text-amber-400">grab what it needs</span>.
+                        </p>
+                    </div>
                 </div>
 
 
