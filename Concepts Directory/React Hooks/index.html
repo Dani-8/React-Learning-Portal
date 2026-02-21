@@ -632,11 +632,137 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 
             <!-- Optimization -->
             <section id="performance" class="hook-section space-y-12">
+                <!-- Header -->
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-xl">05</div>
                     <h2 class="text-3xl font-bold text-slate-900">Optimization Bay</h2>
                 </div>
 
+
+                <div class="bg-slate-900 text-white p-7 md:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl">
+                        <h3 class="text-cyan-500 font-black uppercase tracking-[0.2em] text-[10px] mb-3">Quick Summary</h3>
+                        <p class="text-sm md:text-md font-medium leading-relaxed text-slate-200">
+                            Optimization hooks act as a <span class="text-cyan-400 font-semibold border-b-2 border-cyan-500/30 pb-0.5">smart memory</span>. They tell React to <span class="text-purple-400">reuse previous work</span> instead of starting over whenever something changes.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- cards -->
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- useMemo -->
+                    <div class="bg-white border border-slate-200 rounded-3xl p-8 space-y-6 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-black text-cyan-600 text-sm uppercase tracking-widest">useMemo</h3>
+                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 text-[10px] font-bold rounded">RESULT CACHING</span>
+                        </div>
+                        
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                            <div class="space-y-4">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    If you have a function that takes a long time to run (like filtering 1,000 items), <b>useMemo</b> saves the final result so you don't do the work twice.
+                                </p>
+                                
+                                <div class="pt-2 border-t border-slate-100">
+                                    
+                                    <p class="text-[10px] font-black text-cyan-600 uppercase mb-3 tracking-widest">In our code example:</p>
+
+                                    <ul class="text-[11px] space-y-2 text-slate-500 font-medium">
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span> 
+                                            <b>Input:</b> <span>The <code class="text-cyan-600 bg-cyan-50 px-1 rounded">price</code> variable</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span> 
+                                            <b>Logic:</b> <span>Calculating the 15% tax</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span> 
+                                            <b>Output:</b> <span>The stored <code class="text-cyan-600 bg-cyan-50 px-1 rounded">tax</code> value</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+                            </div>
+                            
+                            <div class="p-5 bg-slate-900 rounded-2xl shadow-inner border border-slate-800">
+                                <div class="mb-3 border-b border-slate-700 pb-2">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Goal: Calculate Tax only when price changes</p>
+                                </div>
+
+                                <pre class="text-[11px] leading-relaxed font-mono text-white">
+<span class="text-pink-400">const</span> [price, setPrice] = <span class="text-cyan-400">useState</span>(<span class="text-amber-400">100</span>);
+
+<span class="text-slate-500">// Result is remembered in "tax"</span>
+<span class="text-pink-400">const</span> tax = <span class="text-cyan-400">useMemo</span>(() => {
+<span class="text-pink-400">return</span> price * <span class="text-amber-400">0.15</span>; 
+}, [price]);
+
+<span class="text-slate-500">// Returns the number value directly</span>
+<span class="text-pink-400">return</span> <span class="text-emerald-400">&lt;p&gt;</span>Tax: {tax}<span class="text-emerald-400">&lt;/p&gt;</span>;</pre>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- useCallback -->
+                    <div class="bg-white border border-slate-200 rounded-3xl p-8 space-y-6 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-black text-purple-600 text-sm uppercase tracking-widest">useCallback</h3>
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-[10px] font-bold rounded">FUNCTION CACHING</span>
+                        </div>
+
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                            <div class="space-y-4">
+                                <p class="text-sm text-slate-600 leading-relaxed">Normally, React creates a brand new function on every render. <b>useCallback</b> keeps the exact same function in memory.</p>
+                                
+                                <div class="pt-2 border-t border-slate-100">
+                                    <p class="text-[10px] font-black text-purple-600 uppercase mb-3 tracking-widest">In our code example:</p>
+
+                                    <ul class="text-[11px] space-y-2 text-slate-500 font-medium">
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> 
+                                            <b>Input:</b> <span>The <code class="text-purple-600 bg-purple-50 px-1 rounded">id</code> of the item</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> 
+                                            <b>Logic:</b> <span>Logging the "buy" message</li></span> 
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> 
+                                            <b>Output:</b> <span>The stable <code class="text-purple-600 bg-purple-50 px-1 rounded">buy</code> function</span> 
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            
+                            <div class="p-5 bg-slate-900 rounded-2xl shadow-inner border border-slate-800">
+                                <div class="mb-3 border-b border-slate-700 pb-2">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Goal: Stop child button from re-rendering</p>
+                                </div>
+
+                                <pre class="text-[11px] leading-relaxed font-mono text-white">
+<span class="text-pink-400">const</span> [id, setId] = <span class="text-cyan-400">useState</span>(<span class="text-amber-400">1</span>);
+
+<span class="text-slate-500">// Function instance is remembered in "buy"</span>
+<span class="text-pink-400">const</span> buy = <span class="text-purple-400">useCallback</span>(() => {
+<span class="text-purple-400">console</span>.<span class="text-cyan-400">log</span>(<span class="text-amber-400">"Buying "</span> + id);
+}, [id]);
+
+<span class="text-slate-500">// Pass the same function to child</span>
+<span class="text-pink-400">return</span> <span class="text-emerald-400">&lt;Button</span> action={buy} <span class="text-emerald-400">/&gt;</span>;</pre>
+                            </div>
+                            
+                        </div>
+
+                            
+                    </div>
+
+                </div>
 
             </section>
 
