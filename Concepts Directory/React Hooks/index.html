@@ -486,7 +486,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
             </section>
             <div class="module-divider"></div>
 
-            
+
 
             <!-- useContext -->
             <section id="context" class="hook-section space-y-8">
@@ -497,7 +497,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                         <h2 class="text-3xl font-bold text-slate-900">useContext: Global Access</h2>
                     </div>
 
-                    <div class="peek-container hidden md:block">
+                    <div class="peek-container hidden md:block disabled">
                         <div class="peek-preview">
                             <p class="text-[10px] font-black text-pink-400 uppercase mb-2">Interactive Lab</p>
                             <p class="text-[11px] text-slate-300 leading-relaxed">
@@ -556,7 +556,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 
 
 
-                <div class="bg-slate-50 rounded-[2.5rem] border border-pink-200 p-8 relative overflow-hidden">
+                <div class="bg-slate-50 rounded-[2.5rem] border border-slate-200 p-8 relative overflow-hidden">
                     <div class="text-center mb-10">
                         <h4 class="text-lg font-bold text-slate-700">No More Prop-Drilling</h4>
                         <p class="text-xs text-slate-500">Stop passing data to components that don't care about it</p>
@@ -593,7 +593,34 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                             <span class="text-[10px] font-black text-slate-400 uppercase">Consumer</span>
                         </div>
                     </div>
-                        
+
+                    <div class="mt-12 text-center space-y-4">
+                        <div class="text-xs inline-flex items-center gap-3 bg-white px-6 py-3 rounded-2xl border border-slate-200 shadow-sm font-mono">
+                            <span class="text-pink-600 font-bold">const</span> data = <span class="text-indigo-600">useContext</span>(UserCtx);
+                        </div>
+
+                        <p class="text-[11px] text-slate-500 px-8">
+                            Component <b>B</b> (the middleman) is completely skipped. <b>C</b> grabs the data directly from the signal.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="p-6 bg-slate-900 rounded-[2rem] text-center space-y-2">
+                        <div class="text-pink-400 text-xl font-bold">Theme</div>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest">Dark/Light Mode</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-900 rounded-[2rem] text-center space-y-2">
+                        <div class="text-pink-400 text-xl font-bold">Auth</div>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest">User Profile</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-900 rounded-[2rem] text-center space-y-2">
+                        <div class="text-pink-400 text-xl font-bold">Cart</div>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest">Global State</p>
+                    </div>
                 </div>
 
 
@@ -601,7 +628,20 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
             </section>
             <div class="module-divider"></div>
 
-            
+
+
+            <!-- Optimization -->
+            <section id="performance" class="hook-section space-y-12">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-xl">05</div>
+                    <h2 class="text-3xl font-bold text-slate-900">Optimization Bay</h2>
+                </div>
+
+
+            </section>
+
+
+
 
         </main>
     
