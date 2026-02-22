@@ -21,6 +21,7 @@ pre {
 
 .hook-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.5s ease;
 }
 .hook-card:hover {
     transform: translateY(-5px);
@@ -28,12 +29,12 @@ pre {
 
 
 .nav-link.active {
-    background: white;
+    transition: 0.5s ease;
     color: #6366f1;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 .nav-link.active span {
     background-color: #6366f1 !important;
+    transition: 0.5s ease;
 }
 
 .destructure-tag {
