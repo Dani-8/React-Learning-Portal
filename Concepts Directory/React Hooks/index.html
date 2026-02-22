@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Power Cells: Built-in Hooks</title>
+    <title>Hooks: Built-in Hooks</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-[#fcfcfd] text-slate-900 leading-relaxed">
     
-    <nav class="sticky top-0 z-500 glass px-6 py-4 flex justify-between items-center">
+    <nav class="sticky top-0 z-50 glass px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-3">
 
             <a href="../index.html" class="group flex items-center gap-2 text-slate-400 hover:text-indigo-600 transition-colors">
@@ -28,8 +28,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 </div>
                 <div>
-                    <h1 class="font-extrabold text-lg tracking-tight text-slate-800">The Power Cells</h1>
-                    <p class="text-[10px] uppercase font-bold text-purple-500 tracking-widest">Built-in Hooks</p>
+                    <h1 class="font-extrabold text-lg tracking-tight text-slate-800">Core Hooks</h1>
+                    <p class="text-[10px] uppercase font-bold text-purple-500 tracking-widest">Module 03: Built-in Hooks</p>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
 
     <!-- ======================================================== -->
 
-    <div class="max-w-6xl px-6 py-12 flex gap-12">
+    <div class="max-w-7xl px-6 py-12 flex gap-12">
 
         <!-- Sidebar -->
         <aside class="w-72 shrink-0 hidden lg:block">
@@ -655,7 +655,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                     <div class="bg-white border border-slate-200 rounded-3xl p-8 space-y-6 shadow-lg">
                         <div class="flex items-center justify-between">
                             <h3 class="font-black text-cyan-600 text-sm uppercase tracking-widest">useMemo</h3>
-                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 text-[10px] font-bold rounded">RESULT CACHING</span>
+                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 text-[10px] font-bold rounded uppercase">Value CACHING</span>
                         </div>
                         
 
@@ -712,7 +712,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                     <div class="bg-white border border-slate-200 rounded-3xl p-8 space-y-6 shadow-lg">
                         <div class="flex items-center justify-between">
                             <h3 class="font-black text-purple-600 text-sm uppercase tracking-widest">useCallback</h3>
-                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-[10px] font-bold rounded">FUNCTION CACHING</span>
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-[10px] font-bold rounded uppercase">FUNCTION CACHING</span>
                         </div>
 
 
@@ -756,21 +756,95 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 <span class="text-slate-500">// Pass the same function to child</span>
 <span class="text-pink-400">return</span> <span class="text-emerald-400">&lt;Button</span> action={buy} <span class="text-emerald-400">/&gt;</span>;</pre>
                             </div>
-                            
+
                         </div>
 
-                            
+                        
                     </div>
-
                 </div>
 
+                <!--  -->
+                <div class="bg-amber-50 border border-amber-100 p-6 rounded-[2rem] flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0 border border-amber-200">💡</div>
+
+                    <div>
+                        <p class="text-[10px] font-black text-amber-600 uppercase tracking-[0.2em] mb-1">When to use?</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">Don't use these for simple logic. Use <span class="font-bold">useMemo</span> for data that takes >10ms to calculate. Use <span class="font-bold">useCallback</span> when passing functions to components wrapped in <code class="bg-amber-100 px-1 rounded text-xs font-bold text-amber-800 italic text-[11px]">React.memo()</code>.</p>
+                    </div>
+                </div>
             </section>
 
 
 
+            <!-- Hooks Summary -->   
+            <section class="bg-[#0f172a] p-8 md:p-14 rounded-[3.5rem] text-center space-y-10 shadow-2xl overflow-hidden">
+                <div class="space-y-2">
+                    <h3 class="text-xs font-black text-indigo-400 tracking-[0.4em] uppercase">Control Center</h3>
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Hooks Summary Dashboard</h2>
+                </div>
+                
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+                    <!-- Card 1 -->
+                    <div class="summary-card p-6 bg-white/5 border border-white/5 rounded-[2rem] text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-4 text-indigo-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">useState</h4>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest text-indigo-400">Memory Battery</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="summary-card p-6 bg-white/5 border border-white/5 rounded-[2rem] text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4 text-emerald-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">useEffect</h4>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest text-emerald-400">Sync Window</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="summary-card p-6 bg-white/5 border border-white/5 rounded-[2rem] text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4 text-amber-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">useRef</h4>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest text-amber-400">Direct DOM</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="summary-card p-6 bg-white/5 border border-white/5 rounded-[2rem] text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center mb-4 text-pink-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">useContext</h4>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest text-pink-400">Broadcast</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="summary-card p-6 bg-white/5 border border-white/5 rounded-[2rem] text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4 text-cyan-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">useMemo</h4>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest text-cyan-400">Cached Value</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="summary-card p-6 bg-white/5 border border-white/5 rounded-[2rem] text-left group">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">useCallback</h4>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest text-purple-400">Cached Logic</p>
+                    </div>
+                </div>
+            </section>
 
         </main>
     
+
+
     </div>
 
     <script src="app.js"></script>
