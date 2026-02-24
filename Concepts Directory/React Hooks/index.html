@@ -526,7 +526,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 
                 <!--  -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Step 1 -->
+                    <!-- 1 -->
                     <div class="bg-pink-50/50 border border-pink-100 p-8 rounded-[2.5rem] space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pink-600 border border-pink-100 font-bold">1</div>
@@ -553,7 +553,7 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                         </ul>
                     </div>
 
-                    <!-- Step 2 -->
+                    <!-- 2 -->
                     <div class="bg-pink-50/50 border border-pink-100 p-8 rounded-[2.5rem] space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pink-600 border border-pink-100 font-bold">2</div>
@@ -583,52 +583,59 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
                 </div>
 
 
-
                 <div class="bg-slate-50 rounded-[2.5rem] border border-slate-200 p-8 relative overflow-hidden">
                     <div class="text-center mb-10">
-                        <h4 class="text-lg font-bold text-slate-700">No More Prop-Drilling</h4>
-                        <p class="text-xs text-slate-500">Stop passing data to components that don't care about it</p>
+                        <h4 class="text-lg font-bold text-slate-700">The "Direct Grab" Result</h4>
+                        <p class="text-xs text-slate-500">Readers get books directly from the Library building</p>
                     </div>
 
                     <div class="max-w-md flex justify-between items-center px-4 mx-auto relative">
-                        <!-- 1 -->
+                        <!-- Provider A -->
                         <div class="flex flex-col items-center gap-2 z-10">
                             <div class="w-16 h-16 bg-pink-600 rounded-2xl shadow-lg flex items-center justify-center text-white font-bold relative">
                                 A
                                 <div class="absolute inset-0 rounded-2xl border-4 border-pink-400 broadcast-wave"></div>
                             </div>
-
-                            <span class="font-bold text-slate-400 text-[10px] uppercase">Provider</span>
+                            <span class="font-bold text-slate-400 text-[10px] uppercase">Library</span>
                         </div>
 
-
-                        <!-- 2 -->
+                        <!-- Connector -->
                         <div class="absolute inset-x-0 top-8 flex items-center justify-center">
                             <div class="h-0.5 w-full border-t-2 border-dashed border-slate-300"></div>
-
                             <div class="absolute bg-white px-3 py-1 border border-slate-200 rounded-full text-[9px] font-black text-slate-500 uppercase tracking-widest">
-                                Direct Link
+                                Direct Access
                             </div>
                         </div>
 
-
-                        <!-- 3 -->
+                        <!-- Consumer C -->
                         <div class="flex flex-col items-center gap-2 z-10">
                             <div class="w-16 h-16 bg-white border-4 border-pink-600 rounded-2xl flex items-center justify-center text-pink-600 font-bold shadow-xl">
                                 C
                             </div>
-
-                            <span class="text-[10px] font-black text-slate-400 uppercase">Consumer</span>
+                            <span class="text-[10px] font-black text-slate-400 uppercase">Reader</span>
                         </div>
                     </div>
 
+                    <!-- Consumption Code Block -->
                     <div class="mt-12 text-center space-y-4">
-                        <div class="text-xs inline-flex items-center gap-3 bg-white px-6 py-3 rounded-2xl border border-slate-200 shadow-sm font-mono">
-                            <span class="text-pink-600 font-bold">const</span> data = <span class="text-indigo-600">useContext</span>(UserCtx);
+                        <div class="bg-slate-950 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 text-left max-w-sm mx-auto">
+                            <div class="file-header">
+                                <span class="text-[10px] font-bold text-emerald-500 tracking-tight">ReaderRoom.jsx</span>
+                                <div class="flex gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-rose-600"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-600"></div>
+                                </div>
+                            </div>
+                            <div class="p-6 font-mono text-[11px]">
+                                <p class="text-pink-300">import <span class="text-white">{ useContext }</span> from 'react';</p>
+                                <p class="text-pink-300">import <span class="text-white">{ LibraryCtx }</span> from './Library';</p>
+                                <div class="my-3 h-px bg-slate-700"></div>
+                                <p class="text-pink-300"><span class="text-indigo-400 font-bold">const</span> myBook = <span class="text-white">useContext</span>(LibraryCtx);</p>
+                            </div>
                         </div>
 
-                        <p class="text-[11px] text-slate-500 px-8">
-                            Component <b>B</b> (the middleman) is completely skipped. <b>C</b> grabs the data directly from the signal.
+                        <p class="text-[11px] text-slate-500 px-8 leading-relaxed">
+                            <b>Final Step:</b> Import the <code class="bg-slate-100 px-1">useContext</code> hook and the specific <code class="bg-slate-100 px-1">LibraryCtx</code> to grab the data instantly from any room.
                         </p>
                     </div>
                 </div>
