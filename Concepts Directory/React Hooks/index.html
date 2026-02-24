@@ -526,31 +526,59 @@ const recharge = () => setEnergy(energy + 10);</code></pre>
 
                 <!--  -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Step 1 -->
                     <div class="bg-pink-50/50 border border-pink-100 p-8 rounded-[2.5rem] space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pink-600 border border-pink-100 font-bold">1</div>
-                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest text-nowrap">Create the Signal</h4>
+                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest text-nowrap">The Catalog</h4>
                         </div>
 
-                        <div class="bg-slate-900 rounded-xl p-4 font-mono text-[10px] text-pink-300">
-                            const UserCtx = <span class="text-white">createContext()</span>;
+                        <div class="bg-slate-950 rounded-xl overflow-hidden shadow-lg border border-slate-800">
+                            <div class="file-header">
+                                <span class="text-[10px] font-bold text-emerald-500 tracking-tight">LibraryContext.jsx</span>
+                                <div class="flex gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-rose-600"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-600"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 font-mono text-[10px] leading-relaxed">
+                                <p class="text-pink-300">import <span class="text-white">{ createContext }</span> from 'react';</p>
+                                <p class="text-pink-300 text-nowrap">export const <span class="text-white">LibraryCtx</span> = createContext();</p>
+                            </div>
                         </div>
 
-                        <p class="text-[11px] text-slate-500 italic">This builds the "channel" your data travels on.</p>
+                        <ul class="text-[11px] text-slate-600 space-y-1">
+                            <li>• <b>Import</b> the <code class="bg-pink-100 px-1">createContext</code> tool from React.</li>
+                            <li>• <b>Create</b> the unique "ID" for your shared library catalog.</li>
+                        </ul>
                     </div>
 
-
+                    <!-- Step 2 -->
                     <div class="bg-pink-50/50 border border-pink-100 p-8 rounded-[2.5rem] space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pink-600 border border-pink-100 font-bold">2</div>
-                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest text-nowrap">Broadcast it</h4>
+                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest text-nowrap">The Building</h4>
                         </div>
 
-                        <div class="bg-slate-900 rounded-xl p-4 font-mono text-[10px] text-pink-300">
-                            &lt;UserCtx.Provider value={user}&gt;
+                        <div class="bg-slate-950 rounded-xl overflow-hidden shadow-lg border border-slate-800">
+                            <div class="file-header">
+                                <span class="text-[10px] font-bold text-emerald-500 tracking-tight">LibraryBuilding.jsx</span>
+                                <div class="flex gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-rose-600"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-600"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 font-mono text-[10px] leading-relaxed">
+                                <p class="text-pink-300">&lt;<span class="text-white">LibraryCtx.Provider</span> value={books}&gt;</p>
+                                <p class="text-slate-400 pl-4">&lt;ReaderRooms /&gt;</p>
+                                <p class="text-pink-300">&lt;/<span class="text-white">LibraryCtx.Provider</span>&gt;</p>
+                            </div>
                         </div>
 
-                        <p class="text-[11px] text-slate-500 italic">Wraps your app to make data available everywhere inside.</p>
+                        <ul class="text-[11px] text-slate-600 space-y-1">
+                            <li>• <b>Wrap</b> your rooms inside the Provider "Building".</li>
+                            <li>• <b>Stock</b> the shelves by passing data into the <code class="bg-pink-100 px-1">value</code>.</li>
+                        </ul>
                     </div>
                 </div>
 
