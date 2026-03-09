@@ -680,7 +680,7 @@ const toggleLight = () => {
                         <p class="text-[11px] text-slate-500">Put anything in the parenthesis <code>useRef(0)</code> to set the starting value. React puts this inside a box for you to use later.</p>
                     </div>
 
-                    
+
                     <div class="bg-white border border-slate-200 p-6 rounded-[2rem] space-y-2 shadow-sm">
                         <h4 class="text-[10px] font-black text-amber-500 uppercase tracking-widest">What it gives back</h4>
                         <p class="text-sm font-bold text-slate-700">A "Magic Box" Object</p>
@@ -729,57 +729,44 @@ const toggleLight = () => {
                 </div>
 
 
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <div
-                        class="bg-amber-50/30 border border-amber-100 rounded-[2.5rem] p-8 space-y-4 hover:bg-amber-50 transition-colors group">
+                    <!-- Case 01 -->
+                    <div class="bg-amber-50/30 border border-amber-100 rounded-[2.5rem] p-8 space-y-4 hover:bg-amber-50 transition-colors group">
                         <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-amber-600 border border-amber-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-amber-600 border border-amber-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11" />
                                 </svg>
                             </div>
-                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest">01. The DOM Anchor
-                            </h4>
+                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest">01. The Hands-on Tool</h4>
                         </div>
-
-                        <p class="text-xs text-slate-600 leading-relaxed">Reach out and touch physical HTML elements
-                            directly. Essential for focus, measuring size, or integrating with non-React libraries.</p>
-
+                        <p class="text-xs text-slate-600 leading-relaxed italic font-medium">"Reach out and touch the HTML."</p>
+                        <p class="text-[11px] text-slate-500 leading-relaxed">Use this to grab a specific element (like a search box) to force focus, play a video, or measure how big it is.</p>
                         <div class="bg-slate-900 rounded-xl p-3 font-mono text-[10px] text-amber-300">
-                            <span class="opacity-50">&lt;input</span> ref={myRef} <span
-                                class="opacity-50">/&gt;</span><br><br>
+                            <span class="opacity-50">&lt;input</span> ref={myRef} <span class="opacity-50">/&gt;</span><br><br>
                             myRef.current.focus();
                         </div>
                     </div>
 
-                    <div
-                        class="bg-emerald-50/30 border border-emerald-100 rounded-[2.5rem] p-8 space-y-4 hover:bg-emerald-50 transition-colors">
+                    
+                    <!-- Case 02 -->
+                    <div class="bg-emerald-50/30 border border-emerald-100 rounded-[2.5rem] p-8 space-y-4 hover:bg-emerald-50 transition-colors">
                         <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-emerald-600 border border-emerald-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-emerald-600 border border-emerald-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                 </svg>
                             </div>
-                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest">02. Silent Storage
-                            </h4>
+                            <h4 class="text-xs font-black text-slate-800 uppercase tracking-widest">02. The Secret Note</h4>
                         </div>
-
-                        <p class="text-xs text-slate-600 leading-relaxed">Store variables that persist across renders
-                            but <b>do not</b> trigger a visual update when changed. Ideal for Timers or IDs.</p>
-
+                        <p class="text-xs text-slate-600 leading-relaxed italic font-medium">"Store info without anyone knowing."</p>
+                        <p class="text-[11px] text-slate-500 leading-relaxed">Store data that stays safe during refreshes, but <b>doesn't</b> make the screen flicker or reload when you change it (like a Timer ID).</p>
                         <div class="bg-slate-900 rounded-xl p-3 font-mono text-[10px] text-emerald-300">
-                            <span class="opacity-60">// Saves data, stays silent.</span><br><br>
-                            myRef.current = <span class="text-white">"New Value"</span>;
+                            <span class="opacity-60">// Silent update</span><br><br>
+                            myRef.current = <span class="text-white">"Timer_ID_123"</span>;
                         </div>
                     </div>
-
                 </div>
 
 
